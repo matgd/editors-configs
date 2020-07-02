@@ -12,7 +12,7 @@ setup_vimrc=1
 
 function installVim {
   sudo apt-get update 
-  sudo apt-get install vim
+  sudo apt-get -y install vim
 }
 
 function installNERDTree {

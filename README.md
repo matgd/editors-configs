@@ -6,5 +6,5 @@ Easy-to-run addon configuration scripts for editors.
 
 ### Debian (APT)
 ```bash
-bash <(https://raw.githubusercontent.com/matgd/editors-configs/master/Vim/apt/install.sh)
+bash <(curl -s https://raw.githubusercontent.com/matgd/editors-configs/master/Vim/apt/install.sh)
 ```

@@ -3,7 +3,7 @@
 CYAN='\033[1;36m'
 NC='\033[0m'
 
-VIMRC_LOCATION="~/.vimrc"
+VIMRC_LOCATION="${HOME}/.vimrc"
 
 install_vim=0
 install_nerdtree=1

@@ -8,7 +8,7 @@ ___In future it will be a script.___
 ### Debian (APT)
 Install Neovim
 ```bash
-sudo apt-get update & sudo apt-get -y install neovim
+sudo apt-get update && sudo apt-get -y install neovim
 ```
 Install vim-plug
 ```bash

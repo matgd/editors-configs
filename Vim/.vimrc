@@ -5,6 +5,8 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+colorscheme murphy
+
 " fzf
 set rtp+=/usr/local/opt/fzf
 

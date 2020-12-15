@@ -9,7 +9,7 @@ VIMRC_LOCATION="${HOME}/.vimrc"
 install_vim=0
 install_nerdtree=$([[ -d ${HOME}/.vim/pack/vendor/start/nerdtree/ ]] && echo 0 || echo 1)
 install_syntastic=$([[ -d ${HOME}/.vim/pack/vendor/start/syntastic/ ]] && echo 0 || echo 1)
-install_fzf=$(which -s fzf; echo $?)
+install_fzf=$(which fzf > /dev/null; echo $?)
 setup_vimrc=$([[ -f ${VIMRC_LOCATION} ]] && echo 0 || echo 1) 
 
 function installVim {
@@ -64,7 +64,7 @@ function printMainPrompt {
   echo "-----------------------------"
 }
 
-if ! which -s git; then 
+if ! which git > /dev/null; then 
   printf "${YELLOW}Couldn't find git, please install it first.${NC}\n"
   exit 1;
 fi   

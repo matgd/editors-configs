@@ -22,7 +22,7 @@ curl -s https://raw.githubusercontent.com/matgd/editors-configs/master/Neovim/.v
 
 Add alias to .bashrc (optional)
 ```bash
-echo "alias vim='nvim'" >> "${HOME}/.bashrc"
+echo "alias vim='nvim -S ~/.nvimrc'" >> "${HOME}/.bashrc"
 ```
 
 Install plugins

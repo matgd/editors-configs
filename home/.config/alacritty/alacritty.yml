@@ -1,16 +1,24 @@
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux"
+
 font:
     size: 16
     normal:
-        family: Go Mono for Powerline
-        #family: Anonymous Pro for Powerline
+        #family: Audiowide Mono
+        family: Go Mono for Powerline 
+        #family: SF Mono for Powerline
         style: Regular
     bold:
+        #family: Audiowide Mono
         family: Go Mono for Powerline
-        #family: Anonymous Pro for Powerline
         style: Bold
     italic:
+        #family: Audiowide Mono
         family: Go Mono for Powerline
-        #family: Anonymous Pro for Powerline
         style: Italic
 window:
     dimensions:

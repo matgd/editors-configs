@@ -10,7 +10,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 # get .vimrc
 mkdir "${HOME}/.config/nvim"
-curl -s https://raw.githubusercontent.com/matgd/editors-configs/master/Neovim/.vimrc > "${HOME}/.config/nvim/init.vim"
+curl -s https://raw.githubusercontent.com/matgd/editors-configs/master/Neovim/.nvimrc > "${HOME}/.config/nvim/init.vim"
 
 # add alias to .bashrc
 echo "alias vim='nvim'" >> "${HOME}/.bashrc"

@@ -24,7 +24,7 @@ let mapleader = " "
 
 " fzf
 set rtp+=/usr/local/opt/fzf
-map <leader>f :FZF<CR>
+" map <leader>f :FZF<CR>
 
 " NERDTree
 map <C-b> :NERDTreeToggle<CR>
@@ -36,14 +36,39 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'majutsushi/tagbar'
+
+" THEMES
 Plug 'gruvbox-community/gruvbox'
+Plug 'ryanoasis/vim-devicons'
+Plug 'crusoexia/vim-monokai'
+Plug 'jacoborus/tender.vim'
+
+
+" FZF
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 Plug 'folke/lsp-colors.nvim'
+Plug 'kabouzeid/nvim-lspinstall'
 
-" Plug 'tpope/vim-surround'
+
+" TELESCOPE
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
+" SURROUNDING
+Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
+Plug 'alvan/vim-closetag'
+
+" EMMET (mapping: <c-y>,  mind the ',' e.g. type html:5 and press ctrl+y,)
+Plug 'mattn/emmet-vim'
+
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'scrooloose/syntastic'
 
@@ -135,4 +160,27 @@ let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', ]
 
 lua require'lspconfig'.pyright.setup{ on_attach=require'completion'.on_attach }
 
+lua << EOF
+require'lspinstall'.setup() -- important
+
+local servers = require'lspinstall'.installed_servers()
+for _, server in pairs(servers) do
+  require'lspconfig'[server].setup{ on_attach=require'completion'.on_attach }
+end
+EOF
+
 colorscheme gruvbox
+
+" TELESCOPE
+" Using Lua functions
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
+" CLOSING TAGS (vim-closetag plugin)
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue'
+
+" Silver Searcher fzf
+nnoremap <silent> <Leader>sf :Ag<CR>
+
